@@ -1,0 +1,56 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Book a Service</title>
+  <link rel="stylesheet" href="{% static 'style6.css' %}">
+</head>
+<body>
+
+  <section class="booking-section">
+    <h2>Book a SmartHome Service</h2>
+    <p>Please fill out the form below to schedule a home IoT service visit.</p>
+
+    <form class="booking-form" action="{% url 'book_service' %}" method="post">
+      {% csrf_token %}
+
+      <label for="name">Full Name</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="phone">Contact Number</label>
+      <input type="tel" id="phone" name="phone" required pattern="[0-9]{10}" placeholder="10-digit mobile number">
+
+      <label for="email">Email Address</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="service_type">Type of Service</label>
+      <select id="service_type" name="service_type" required>
+        <option value="">-- Select Service --</option>
+        <option value="thermostat">Smart Thermostat (HVAC)</option>
+        <option value="smart_lighting">Smart Lighting Installation(Can be remotely controlled or voice-activate)</option>
+        <option value="water">Water Leak Detection</option>
+        <option value="gas">Gas Leak Detection</option>
+        <option value="home">Home Security & Surveillance(Cameras, smart locks, motion sensors)</option>
+        <option value="others">Other</option>
+      </select>
+
+      <label for="preferred_time">Preferred Date & Time</label>
+      <input type="datetime-local" id="preferred_time" name="preferred_time" required>
+
+      <label for="address">House Address</label>
+      <textarea id="address" name="address" rows="3" required></textarea>
+
+      <label for="landmark">Landmark / Pin Code</label>
+      <input type="text" id="landmark" name="landmark">
+
+      <label for="notes">Additional Notes</label>
+      <textarea id="notes" name="notes" rows="3" placeholder="Any special instructions or notes"></textarea>
+
+      <button type="submit" class="btn"><a href="{% url 'option' %}">Book Now</a></button>
+    </form>
+  </section>
+
+</body>
+</html>

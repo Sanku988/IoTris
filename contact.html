@@ -1,0 +1,71 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us</title>
+  <link rel="stylesheet" href="{% static 'style5.css' %}">
+  
+</head>
+<body>
+
+  <section class="contact-section">
+    <h2>Contact Us</h2>
+    <p>We’d love to hear from you! Reach out to us through any of the following ways.</p>
+
+    
+    <div class="contact-info">
+      <div class="contact-item">
+        <i class="fas fa-phone"></i>
+        <h3>Phone</h3>
+        <p>+91 7601838345</p>
+      </div>
+      <div class="contact-item">
+        <i class="fas fa-envelope"></i>
+        <h3>Email</h3>
+        <p>iotris.services@gmail.com</p>
+      </div>
+      <div class="contact-item">
+        <i class="fab fa-whatsapp"></i>
+        <h3>WhatsApp</h3>
+        <p><a href="https://wa.me/7679714421" target="_blank">Chat on WhatsApp</a></p>
+      </div>
+      <div class="contact-item">
+        <i class="fab fa-facebook"></i>
+        <h3>Facebook</h3>
+        <p><a href="https://www.facebook.com/share/19rFyhuyAf/?mibextid=qi2Omg" target="_blank">IoTrisOfficial</a></p>
+      </div>
+      <div class="contact-item">
+        <i class="fab fa-twitter"></i>
+        <h3>Twitter</h3>
+        <p><a href="https://twitter.com/@IoTrisTech" target="_blank">@IoTrisTech</a></p>
+      </div>
+      <div class="contact-item">
+        <i class="fab fa-instagram"></i>
+        <h3>Instagram</h3>
+        <p><a href="https://www.instagram.com/hazrasanku988?igsh=d28xbzVhbWlyOW9j" target="_blank">@iotris_official</a></p>
+      </div>
+    </div>
+
+    
+    <div class="contact-form">
+      <h3>Send Us a Message</h3>
+      <form action="{% url 'submit_contact' %}" method="post">
+        {% csrf_token %}
+        <label for="name">Your Name</label>
+        <input type="text" name="name" id="name" required>
+
+        <label for="email">Your Email</label>
+        <input type="email" name="email" id="email" required>
+
+        <label for="message">Message</label>
+        <textarea name="message" id="message" rows="5" placeholder="Write your message here..." required></textarea>
+
+        <button type="submit" class="btn">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+</body>
+</html>

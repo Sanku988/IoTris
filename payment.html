@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Page</title>
+    <link rel="stylesheet" href="{% static 'style8.css' %}">
+</head>
+<body>
+    <div class="payment-container">
+        <h2>Payment Details</h2>
+        <form action="{% url 'payment_process' %}" method="post" class="payment-form">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="cardholder">Cardholder Name</label>
+                <input type="text" id="cardholder" name="a1" placeholder="Enter name on card" required>
+            </div>
+            <div class="form-group">
+                <label for="card-number">Card Number</label>
+                <input type="text" id="card-number" name="a2" placeholder="1234 5678 9101 1121" maxlength="19" required>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="expiry">Expiry Date</label>
+                    <input type="text" id="expiry" name="a3" placeholder="YY-MM-DD" required>
+                </div>
+                <div class="form-group">
+                    <label for="cvv">CVV</label>
+                    <input type="password" id="cvv" name="a4" placeholder="123" maxlength="4" required>
+                </div>
+            </div><br><br>
+            <div class="form-group">
+                <label for="amount">Amount</label>
+                <input type="text" id="amount" name="a5" placeholder="Enter amount" required>
+            </div>
+            <button type="submit" class="pay-btn">Pay Now</button>
+            
+        </form>
+    </div>
+    </body>
+</html>

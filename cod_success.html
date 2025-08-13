@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Order Placed</title>
+    <style>
+        body {
+            font-family: Arial;
+            background: linear-gradient(to right, #0c0f1e, #1e3548);
+        }
+        .box {
+            background: #607ed5ff;
+            max-width: 400px;
+            margin: 60px auto;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+        }
+        a {
+            margin-top: 20px;
+            display: inline-block;
+            background: #d2f343ff;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: background 0.2s;
+        }
+        a:hover {
+            background: #b0d32aff;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h2>Order Placed (Cash on Delivery)</h2>
+        <p>Thank you! Please pay at the time of delivery.</p>
+        <a href="{% url 'home' %}">Go Home</a>
+    </div>
+</body>
+</html>

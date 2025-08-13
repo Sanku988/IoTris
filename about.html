@@ -1,0 +1,119 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About | IoTris</title>
+  <link rel="stylesheet" href="{% static 'style7.css' %}" />
+</head>
+<body>
+
+  <!-- ===== Header / Nav ===== -->
+  <header class="site-header">
+    <div class="container">
+      <div class="logo">IoTris</div>
+      <nav>
+        <ul class="nav-links" style="display: flex; gap: 2rem; list-style: none; margin: 0; padding: 0;">
+          <li><a href="{% url 'home' %}">Home</a></li>
+          <li><a href="{% url 'about' %}">About</a></li>
+          <li><a href="{% url 'service_view' %}">Services</a></li>
+          <li><a href="{% url 'contact' %}">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ===== Hero Section ===== -->
+    <section class="about-hero">
+      <h1>Welcome to IoTris</h1>
+      <p>Your trusted partner for smart home automation and IoT-based services.</p>
+    </section>
+
+    <!-- ===== Services Section ===== -->
+    <section class="services">
+      <h2>Smart Home IoT Services</h2>
+
+      <div class="service-item">
+        <p><strong>Smart Lighting Control:</strong> Automatically adjusts lights based on occupancy or time; supports remote or voice control.</p>
+      <video class="bg-video" autoplay muted loop controls playsinline
+               poster="{% static 'lightfan.webp' %}">
+
+          <source src="{% static 'videos/light.mp4' %}" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+
+      <div class="service-item">
+        <p><strong>Smart Thermostat (HVAC):</strong> Optimizes energy and temperature using AI that learns user behavior.</p>
+        <video class="bg-video" autoplay muted loop controls playsinline
+               poster="{% static 'thermostat.png' %}">
+              
+          <source src="{% static 'videos/temp.mp4' %}" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+
+      <div class="service-item">
+        <p><strong>Home Security & Surveillance:</strong> Smart cameras, motion detectors, and door sensors with real-time alerts and live streams.</p>
+      <video class="bg-video" autoplay muted loop controls playsinline
+                 poster="{% static 'security.jpeg' %}">
+          <source src="{% static 'videos/security.mp4' %}" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+    </div>
+
+      <div class="service-item">
+        <p><strong>Smart Appliances:</strong> Internet-connected devices like refrigerators and ovens with remote control and maintenance alerts.</p>
+      <video class="bg-video" autoplay muted loop controls playsinline
+                 poster="{% static 'smarthome.webp' %}">
+          <source src="{% static 'videos/smart_applience.mp4' %}" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+
+      <div class="service-item">
+        <p><strong>Gas Leak Detection:</strong> Sensor-based leak detection with instant mobile alerts.</p>
+         <video class="bg-video" autoplay muted loop controls playsinline
+                 poster="{% static 'gasdetect.jpg' %}">
+          <source src="{% static 'videos/gasleak.mp4' %}" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </section>
+
+    <!-- ===== Projects Section ===== -->
+    <section class="projects">
+      <h2>Project Ideas</h2>
+      <ul>
+        <li>Voice-controlled smart mirror</li>
+        <li>AI-powered home assistant</li>
+        <li>Smart garden irrigation system</li>
+        <li>Room occupancy-based lighting/fan control</li>
+        <li>Elderly fall detection with emergency alerts</li>
+      </ul>
+    </section>
+
+    <!-- ===== Why Choose Us Section ===== -->
+    <section class="why-choose">
+      <h2>Why Choose IoTris?</h2>
+      <ul>
+        <li>Experts in IoT automation and embedded systems</li>
+        <li>Real-time monitoring & cloud-based notifications</li>
+        <li>Affordable and customizable smart home packages</li>
+        <li>24/7 customer support and professional installation</li>
+        <li>Integration with Alexa, Google Assistant & more</li>
+      </ul>
+    </section>
+
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer>
+    <p>&copy; 2025 IoTris | Smart Living Made Simple.</p>
+  </footer>
+
+</body>
+</html>
